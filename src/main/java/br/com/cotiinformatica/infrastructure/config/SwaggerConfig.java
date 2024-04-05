@@ -13,12 +13,19 @@ import io.swagger.v3.oas.models.info.License;
 public class SwaggerConfig {
 	@Bean
 	public OpenAPI customOpenApi() {
-		return new OpenAPI().components(new Components())
-				.info(new Info().title("API eCommerce - COTI Informática")
+		
+		return new OpenAPI()
+				.components(new Components())
+				.info(new Info()
+						.title("API eCommerce - COTI Informática")
 						.description("Projeto Spring Boot API para controle de pedidos").version("v1")
-						.contact(new Contact().name("COTI Informática").email("contato@cotiinformatica.com.br")
+						.contact(new Contact()
+								.name("COTI Informática")
+								.email("contato@cotiinformatica.com.br")
 								.url("https://www.cotiinformatica.com.br"))
-						.license(new License().name("Licença").url("https://www.cotiinformatica.com.br"))
+						.license(new License()
+								.name("Licença")
+								.url("https://www.cotiinformatica.com.br"))
 						.termsOfService("https://www.cotiinformatica.com.br"));
 	}
 }

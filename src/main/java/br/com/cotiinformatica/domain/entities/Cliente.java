@@ -14,7 +14,7 @@ import lombok.Data;
 @Table(name = "tbl_cliente")
 @Data
 public class Cliente {
-	
+
 	@Id
 	@Column(name = "id")
 	private UUID id;
@@ -27,6 +27,9 @@ public class Cliente {
 
 	@Column(name = "cpf", length = 14, nullable = false, unique = true)
 	private String cpf;
+
+	@Column(name = "senha", length = 100)
+	private String senha;
 
 	@OneToMany(mappedBy = "cliente")
 	private List<Pedido> pedidos;

@@ -15,17 +15,20 @@ import lombok.Data;
 @Table(name = "tbl_produto")
 @Data
 public class Produto {
-	
+
 	@Id
 	@Column(name = "id")
 	private UUID id;
-	
+
 	@Column(name = "nome", length = 150, nullable = false)
 	private String nome;
-	
+
 	@Column(name = "preco", precision = 10, scale = 2, nullable = false)
 	private BigDecimal preco;
-	
+
+	@Column(name = "foto", nullable = false)
+	private byte[] foto;
+
 	@OneToMany(mappedBy = "produto")
 	private List<ItemPedido> itensPedido;
 }
